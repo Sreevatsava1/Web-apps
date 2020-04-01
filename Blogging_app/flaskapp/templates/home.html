@@ -1,0 +1,14 @@
+{% extends "layout.html" %}
+{% block content %}
+    {% if current_user.is_authenticated %}
+        <div class="content-section">
+          <div class="media">
+            <div class="media-body">
+              <h4 class="account-heading">{{ current_user.first_name + " "+ current_user.last_name }}</h4>
+              <p class="text-secondary">{{ "@"+ current_user.username }}</p>
+	      <p class='text-secondary'>{{ current_user.email }}</p>
+	    </div>
+          </div>
+        </div>
+    {% endif %}
+{% endblock content %}
